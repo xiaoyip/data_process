@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 input_value = [i for i in range(1, 6)]
 squares = [i**2 for i in range(1, 6)]
 
-plt.style.use('seaborn')
+plt.style.use('seaborn')  # 使用matplotlib内置样式
 plt.rcParams['font.sans-serif'] = ['FangSong']  # 指定默认字体
 plt.rcParams['axes.unicode_minus'] = False  # 解决保存图像是负号'-'显示为方块的问题
 fig, ax = plt.subplots()
