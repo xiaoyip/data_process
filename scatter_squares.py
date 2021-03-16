@@ -1,0 +1,24 @@
+import matplotlib.pyplot as plt
+
+x_value = range(1, 1001)
+y_value = [i**2 for i in x_value]
+
+plt.style.use('seaborn')
+plt.rcParams['font.sans-serif'] = ['FangSong']  # 指定默认字体
+plt.rcParams['axes.unicode_minus'] = False  # 解决保存图像是负号'-'显示为方块的问题
+
+fig, ax = plt.subplots()
+ax.scatter(x_value, y_value, c=y_value, cmap=plt.cm.Blues, s=10)  # 使用颜色映射
+
+# 设置图表标题并给坐标轴加上标签
+ax.set_title('平方数', fontsize=24)
+ax.set_xlabel('值', fontsize=14)
+ax.set_ylabel('值的平方', fontsize=14)
+
+# 设置刻度标记的大小
+ax.tick_params(axis='both', which='major', labelsize=14)
+
+# 设置每个坐标轴的取值范围
+ax.axis([0, 1100, 0, 1100000])
+
+plt.savefig('squares_plot.png', bbox_inches='tight')
